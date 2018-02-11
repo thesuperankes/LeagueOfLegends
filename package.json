@@ -1,0 +1,34 @@
+{
+  "name": "leagueoflegends",
+  "version": "1.0.0",
+  "description": "we create a stadistic webpage with the league of legends api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesuperankes/LeagueOfLegends.git"
+  },
+  "keywords": [
+    "League",
+    "Of",
+    "Legends",
+    "TSAGAMES",
+    "WEbApi",
+    "NodeJs"
+  ],
+  "author": "TSAGames",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesuperankes/LeagueOfLegends/issues"
+  },
+  "homepage": "https://github.com/thesuperankes/LeagueOfLegends#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "nodemon": "^1.14.12",
+    "request": "^2.83.0",
+    "socket.io": "^2.0.4"
+  }
+}
