@@ -93,38 +93,3 @@ server = http.createServer(app);
 server.listen(process.env.PORT || 3000,()=>{
     console.log("arrancamos el server");
 });
-
-
-// var ChampionC = require('./public/Models/ChampionMaestries');
-// var SummonerC = require('./public/Models/Summoner');
-
-// var champList = Array<ChampionC.ChampionMaestries>[];
-// var summoner = SummonerC.Summoner;
-
-// let listchamps = consumeApi.getChampMaestries(202063,function(err, body){
-//     if(err){
-//         console.log(err);
-//     }else{
-//         var response = body;
-//         let champList = JSON.parse(response);
-//         for(var i = 0; i<champList.length;i++){
-//             console.log(champList[i].championId);
-//         }
-//     }
-// });
-
-// function getSummoner(username){
-    
-// }
-
-// app.get('/', (req,res)=>{
-//     res.sendfile(__dirname + '/public/Views/index.html')
-// });
-
-
-
-// app.use('/public',express.static(__dirname + '/public'));
-
-// http.listen(process.env.PORT || 3000,()=>{
-//     console.log('listen on port: 3000');
-// });
