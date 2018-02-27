@@ -4,6 +4,8 @@
         <link rel="stylesheet" href="Public/Views/src/bootstrap.min.css">
         <script lenguage="Javascript">
         var socket = io();
+        var userId = 0;
+        
 
         function checkUser(form){
             var username = form.fname.value;
@@ -13,7 +15,9 @@
             socket.on('getName',(data)=>{
                 if(data.name != "" || data.name != undefined){
                     console.log(data.name);
-                    document.getElementById("titulo").innerHTML = data.id;
+                    userId = data.id;
+                    console.log(userId);
+                    document.getElementById("titulo").innerHTML = data.name;
                     var url = 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/profileicon/'+data.profileIconId+'.png'
                     document.getElementById('profileIcon').src=url;
 
@@ -24,10 +28,11 @@
     </head>
     <body>
         <div class="jumbotron">
-                <img width="128px" height="128px" id="profileIcon" src="http://ddragon.leagueoflegends.com/cdn/8.3.1/img/profileicon/">
-                <h1 name="titulo" id="titulo">importando socket.io</h1>
+            <span><img width="128px" height="128px" id="profileIcon" src="http://ddragon.leagueoflegends.com/cdn/8.3.1/img/profileicon/"><h1 name="titulo" id="titulo">importando socket.io</h1></span>
         </div>
         
+        <button></button>
+
         <form id="getUser">
             <label>Username</label>
             <input type="text" name="fname">

@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/thesuperankes/LeagueOfLegends#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "json-query": "^2.2.2",
     "lodash": "^4.17.5",
     "nodemon": "^1.14.12",
     "request": "^2.83.0",
