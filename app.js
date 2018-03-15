@@ -1,4 +1,4 @@
-var express= require('express'),
+var express = require('express'),
     bodyParser = require('body-parser'),
     http = require('http'),
     app,
@@ -14,13 +14,13 @@ app.use(bodyParser.json());
 
 router = express.Router();
 
-router.get('/champMaestries/:userid',(req,res)=>{
+router.get('/champMaestries/:userid', (req, res) => {
     var userid = req.params.userid;
 
-    consumeApi.getChampMaestries(userid,(err,body)=>{
-        if(err){
+    consumeApi.getChampMaestries(userid, (err, body) => {
+        if (err) {
             console.log(err);
-        }else{
+        } else {
             var response = body;
             let champList = JSON.parse(response);
 
@@ -28,17 +28,17 @@ router.get('/champMaestries/:userid',(req,res)=>{
             console.log("entramos al championList")
             console.log(champList);
         }
-        
+
     })
 });
 
-router.get('/summoner/:username',(req,res)=>{
+router.get('/summoner/:username', (req, res) => {
     var username = req.params.username;
 
-    consumeApi.getPlayerByName(username,(err,body)=>{
-        if(err){
+    consumeApi.getPlayerByName(username, (err, body) => {
+        if (err) {
             console.log(err);
-        }else{
+        } else {
             var response = body;
             var summoner = JSON.parse(response);
             res.json(summoner);
@@ -48,12 +48,12 @@ router.get('/summoner/:username',(req,res)=>{
     console.log(username);
 });
 
-router.get('/champ/:id',(req,res)=>{
+router.get('/champ/:id', (req, res) => {
     var champid = req.params.id;
-    consumeApi.getChampDetailsById(champid,(err,body)=>{
-        if(err){
+    consumeApi.getChampDetailsById(champid, (err, body) => {
+        if (err) {
             console.log(err);
-        }else{
+        } else {
             var response = body;
             var champDetail = JSON.parse(response);
             res.json(champDetail);
@@ -62,13 +62,13 @@ router.get('/champ/:id',(req,res)=>{
     });
 });
 
-router.get('/champjson/:name',(req,res)=>{
+router.get('/champjson/:name', (req, res) => {
     var name = req.params.name;
     console.log(name);
-    consumeApi.getChampDetailsByNameJson(name,(err,body)=>{
-        if(err){
+    consumeApi.getChampDetailsByNameJson(name, (err, body) => {
+        if (err) {
             console.log(err);
-        }else{
+        } else {
             var response = body;
             var champDetail = JSON.parse(response);
 
@@ -87,9 +87,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/api',router);
+app.use('/api', router);
 
 server = http.createServer(app);
-server.listen(process.env.PORT || 3000,()=>{
+server.listen(process.env.PORT || 3000, () => {
     console.log("arrancamos el server");
 });
