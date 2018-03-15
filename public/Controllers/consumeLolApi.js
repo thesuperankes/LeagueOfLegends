@@ -1,6 +1,6 @@
 var request = require('request');
 let url = 'https://la1.api.riotgames.com/lol/';
-const KEY = 'RGAPI-abb3f9cc-cc82-4c71-81b3-36b7dd226be4';
+const KEY = 'RGAPI-c70ce09f-1bda-488a-ad4d-7429a35eaf16';
 var fs = require('fs');
 var jsonquery = require('json-query');
 
